@@ -1,0 +1,4 @@
+.project.el
+node_modules
+public
+build
