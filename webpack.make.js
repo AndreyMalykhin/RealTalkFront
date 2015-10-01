@@ -172,9 +172,10 @@ module.exports = function makeWebpackConfig (options) {
   config.plugins = [
     // Reference: https://github.com/webpack/extract-text-webpack-plugin
     // Extract css files
-    // Disabled when in test mode or not in build mode
-    new ExtractTextPlugin('[name].[hash].css', {
-      disable: !BUILD || TEST
+    new ExtractTextPlugin('[name].[hash].css'),
+    new webpack.ProvidePlugin({
+      CodeMirror: 'codemirror/lib/codemirror',
+      'window.CodeMirror': 'codemirror/lib/codemirror'
     })
   ];
 
