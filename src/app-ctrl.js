@@ -1,4 +1,4 @@
-export default class IndexCtrl {
+export default class AppCtrl {
     constructor($q) {
         this.$q = $q;
         this.code = '"POW!POW!";';
@@ -11,4 +11,4 @@ export default class IndexCtrl {
     }
 }
 
-IndexCtrl.$inject = ['$q'];
+AppCtrl.$inject = ['$q'];

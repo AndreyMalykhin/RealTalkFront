@@ -1,3 +1,7 @@
-<rt-playground-code></rt-playground-code>
-<md-button class="md-raised" ng-click="playgroundCtrl.executeCode()">BRRRRRRRRRACK!</md-button>
-<rt-playground-output></rt-playground-output>
+<div layout="row" layout-align="center" layout-wrap layout-margin layout-fill>
+    <rt-playground-code flex layout></rt-playground-code>
+    <rt-playground-output flex layout></rt-playground-output>
+    <div flex="100" layout="row" layout-align="center">
+        <md-button class="md-raised md-primary" ng-click="playgroundCtrl.executeCode()">BRRRRRRRRRACK!</md-button>
+    </div>
+</div>

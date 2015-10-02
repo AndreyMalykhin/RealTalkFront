@@ -14,7 +14,7 @@ export default function playgroundDirective() {
 
 class Controller {
     constructor() {
-        this.output = 'DUH!DUH!DUH!';
+        this.output = '';
     }
     
     executeCode() {

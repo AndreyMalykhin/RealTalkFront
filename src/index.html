@@ -3,20 +3,24 @@
     <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-        <title>Real Talk</title>
+        <title>Real Talk!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="initial-scale=1" />
         <base href="/">
     </head>
-    <body ng-controller="IndexCtrl as indexCtrl">
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <md-button class="md-icon-button">
-                    <md-icon> &#xE88A; </md-icon>
-                </md-button>
-                <h1>Real Talk!</h1>
-            </div>
-        </md-toolbar>
-        <rt-playground rt-code="indexCtrl.code" rt-on-execute="indexCtrl.executeCode(code)"></rt-playground>
+    <body ng-controller="AppCtrl as appCtrl">
+        <div layout="column" layout-fill>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button">
+                        <md-icon> &#xE88A; </md-icon>
+                    </md-button>
+                    <h1>Real Talk!</h1>
+                </div>
+            </md-toolbar>
+            <md-content flex layout>
+                <rt-playground layout layout-fill rt-code="appCtrl.code" rt-on-execute="appCtrl.executeCode(code)"></rt-playground>
+            </md-content>
+        </div>
     </body>
 </html>

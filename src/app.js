@@ -2,10 +2,10 @@ import 'angular-material/angular-material.css';
 import ngMaterial from 'angular-material';
 import angular from 'angular';
 import playground from './playground';
-import IndexCtrl from './index-ctrl';
+import AppCtrl from './app-ctrl';
 
 angular.module('app', [ngMaterial, playground])
-    .controller('IndexCtrl', IndexCtrl)
+    .controller('AppCtrl', AppCtrl)
     .config(['$mdThemingProvider', function($mdThemingProvider) {
         $mdThemingProvider.theme('default')
             .primaryPalette('brown')
