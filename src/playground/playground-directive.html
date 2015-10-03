@@ -1,7 +1,5 @@
-<div layout="row" layout-align="center" layout-wrap layout-margin layout-fill>
-    <rt-playground-code flex layout></rt-playground-code>
-    <rt-playground-output flex layout></rt-playground-output>
-    <div flex="100" layout="row" layout-align="center">
-        <md-button class="md-raised md-primary" ng-click="playgroundCtrl.executeCode()">BRRRRRRRRRACK!</md-button>
-    </div>
+<div flex layout="row" layout-sm="column" layout-align="center" layout-wrap layout-padding class="rt-playground">
+    <rt-playground-code flex="50" flex-sm="50" layout class="rt-playground__code"></rt-playground-code>
+    <rt-playground-output flex="50" flex-sm="50" flex-order-sm="3" layout class="rt-playground__output"></rt-playground-output>
+    <md-button class="md-raised md-primary" ng-click="playgroundCtrl.executeCode()">BRRRRRRRRRACK!</md-button>
 </div>

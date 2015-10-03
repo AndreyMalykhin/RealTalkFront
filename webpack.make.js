@@ -175,7 +175,10 @@ module.exports = function makeWebpackConfig (options) {
     new ExtractTextPlugin('[name].[hash].css'),
     new webpack.ProvidePlugin({
       CodeMirror: 'codemirror/lib/codemirror',
-      'window.CodeMirror': 'codemirror/lib/codemirror'
+      'window.CodeMirror': 'codemirror/lib/codemirror',
+      $: 'jquery/dist/jquery',
+      jQuery: 'jquery/dist/jquery',
+      'window.jQuery': 'jquery/dist/jquery'
     })
   ];
 

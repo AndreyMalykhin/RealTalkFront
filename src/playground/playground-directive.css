@@ -1,3 +1,7 @@
-.rt-playground__output-control {
-    border: none;
+.rt-playground {
+    align-content: flex-start;
+}
+
+.md-layout-sm-column .rt-playground__output {
+    flex-grow: 1;
 }

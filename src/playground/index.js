@@ -1,4 +1,3 @@
-import './playground-directive.css';
 import angular from 'angular';
 import playgroundDirective from './playground-directive';
 import playgroundCodeDirective from './playground-code-directive';

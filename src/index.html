@@ -15,11 +15,11 @@
                     <md-button class="md-icon-button">
                         <md-icon> &#xE88A; </md-icon>
                     </md-button>
-                    <h1>Real Talk!</h1>
+                    <h1 class="rt-toolbar__title">Real Talk!</h1>
                 </div>
             </md-toolbar>
             <md-content flex layout>
-                <rt-playground layout layout-fill rt-code="appCtrl.code" rt-on-execute="appCtrl.executeCode(code)"></rt-playground>
+                <rt-playground flex layout rt-code="appCtrl.code" rt-on-execute="appCtrl.executeCode(code)"></rt-playground>
             </md-content>
         </div>
     </body>

@@ -1,3 +1,5 @@
+import './playground-directive.css';
+
 export default function playgroundDirective() {
     return {
         restrict: 'E',
