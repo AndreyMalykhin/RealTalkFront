@@ -32,7 +32,7 @@ module.exports = function makeWebpackConfig (options) {
     config.entry = {}
   } else {
     config.entry = {
-      app: './src/app.js'
+      app: './src/app/index.js'
     }
   }
 
@@ -105,10 +105,11 @@ module.exports = function makeWebpackConfig (options) {
       loader: 'file'
     }, {
       // HTML LOADER
-      // Reference: https://github.com/webpack/raw-loader
+      // Reference: https://github.com/webpack/html-loader
       // Allow loading html through js
       test: /\.html$/,
-      loader: 'raw'
+      loader: 'html',
+      query: {attrs: ['md-icon:md-svg-src']}
     }]
   };
 

@@ -1,0 +1,14 @@
+.rt-logo {
+    width: auto !important;
+    background-color: #fff;
+}
+
+.rt-logo__icon {
+    width: 60px;
+    color: #000 !important;
+}
+
+.rt-toolbar__title {
+    font-family: monospace;
+    font-weight: bold !important;
+}

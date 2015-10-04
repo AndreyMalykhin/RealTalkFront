@@ -8,19 +8,7 @@
         <meta name="viewport" content="initial-scale=1" />
         <base href="/">
     </head>
-    <body ng-controller="AppCtrl as appCtrl">
-        <div layout="column" layout-fill>
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <md-button class="md-icon-button">
-                        <md-icon> &#xE88A; </md-icon>
-                    </md-button>
-                    <h1 class="rt-toolbar__title">Real Talk!</h1>
-                </div>
-            </md-toolbar>
-            <md-content flex layout>
-                <rt-playground flex layout rt-code="appCtrl.code" rt-on-execute="appCtrl.executeCode(code)"></rt-playground>
-            </md-content>
-        </div>
+    <body>
+        <rt-app></rt-app>
     </body>
 </html>

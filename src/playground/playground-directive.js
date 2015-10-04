@@ -6,7 +6,7 @@ export default function playgroundDirective() {
         template: require('./playground-directive.html'),
         bindToController: true,
         controllerAs: 'playgroundCtrl',
-        controller: Controller,
+        controller: Ctrl,
         scope: {
             code: '=rtCode',
             onExecute: '&rtOnExecute'
@@ -14,7 +14,7 @@ export default function playgroundDirective() {
     };
 }
 
-class Controller {
+class Ctrl {
     constructor() {
         this.output = '';
     }
