@@ -1,4 +1,3 @@
-import 'codemirror/lib/codemirror.css';
 import angular from 'angular';
 import 'angular-ui-codemirror/src/ui-codemirror';
 import playgroundDirective from './playground-directive';

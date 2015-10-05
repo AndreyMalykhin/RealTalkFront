@@ -1,3 +1,5 @@
+import 'codemirror/lib/codemirror.css';
+
 export default function playgroundCodeDirective() {
     return {
         restrict: 'E',
