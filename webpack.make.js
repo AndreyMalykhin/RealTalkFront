@@ -180,7 +180,8 @@ module.exports = function makeWebpackConfig (options) {
       $: 'jquery/dist/jquery',
       jQuery: 'jquery/dist/jquery',
       'window.jQuery': 'jquery/dist/jquery'
-    })
+    }),
+    new webpack.DefinePlugin(require('./environment.js'))
   ];
 
   // Skip rendering index.html in test mode

@@ -1,10 +1,16 @@
 export default class Server {
     /**
+     * @param {String} url
      * @param {Object} $q
-     * @param {Object} $timeout
+     * @param {Object} $resource
      * @param {Object} eventManager
      */
-    constructor($q, $timeout, eventManager) {
+    constructor(url, $q, $resource, eventManager) {
+        /**
+         * @type {String}
+         */
+        this._url = url;
+        
         /**
          * @type {Object}
          */
@@ -13,7 +19,7 @@ export default class Server {
         /**
          * @type {Object}
          */
-        this._$timeout = $timeout;
+        this._$resource = $resource;
 
         /**
          * @type {Object}
@@ -24,6 +30,14 @@ export default class Server {
          * @type {Number}
          */
         this._pendingRequestsCount = 0;
+
+        /**
+         * @type {Resource}
+         */
+        this._vm = $resource(
+            this._url + '/vm',
+            null,
+            {execute: {method: 'POST'}});
     }
 
     /**
@@ -33,16 +47,22 @@ export default class Server {
     executeCode(code) {
         let deferred = this._$q.defer();
         ++this._pendingRequestsCount;
-        this._$timeout(() => {
-            --this._pendingRequestsCount;
-            // deferred.resolve('"POW!" + ' + code);
-            let error = {code: 500, msg: 'Shiiiiiiieeeeeeet'};
-            this._eventManager.publish({
-                topic: Server.EVENT_REQUEST_ERROR,
-                data: error
+        this._vm.execute(null, {'code': code}).$promise
+            .then((vm) => {
+                deferred.resolve(vm.output);
+            }).catch((response) => {
+                let error = (typeof response.data === 'string')
+                    ? {code: response.status, msg: response.statusText}
+                    : response.data;
+                this._eventManager.publish({
+                    topic: Server.EVENT_REQUEST_ERROR,
+                    data: error
+                });
+                deferred.reject(error);
+            })
+            .finally(() => {
+                --this._pendingRequestsCount;
             });
-            deferred.reject(error);
-        }, 5000);
         return deferred.promise;
     }
 
@@ -61,4 +81,4 @@ export default class Server {
  */
 Server.EVENT_REQUEST_ERROR = 'server.request_error';
 
-Server.$inject = ['$q', '$timeout', 'eventManager'];
+Server.$inject = ['serverUrl', '$q', '$resource', 'eventManager'];
