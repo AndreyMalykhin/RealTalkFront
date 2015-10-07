@@ -3,11 +3,12 @@ import './global.css';
 import angular from 'angular';
 import ngMaterial from 'angular-material';
 import ngResource from 'angular-resource';
+import ngRouter from 'angular-ui-router/release/angular-ui-router';
 import postal from 'postal/lib/postal';
 import Server from './server';
 import ErrorHandler from './error-handler';
 
-export default angular.module('app.core', [ngResource, ngMaterial])
+export default angular.module('app.core', [ngResource, ngRouter, ngMaterial])
     .constant('serverUrl', ENV_SERVER_URL)
     .service('server', Server)
     .service('errorHandler', ErrorHandler)
