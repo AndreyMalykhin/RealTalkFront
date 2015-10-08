@@ -9,6 +9,10 @@ export default angular.module('app.help', [core, 'md.data.table'])
     .config(config)
     .name;
 
+/**
+ * @param {Object} $stateProvider
+ * @return {undefined}
+ */
 function config($stateProvider) {
     $stateProvider.state('help', {
         url: '/help',

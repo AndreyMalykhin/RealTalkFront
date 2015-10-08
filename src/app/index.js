@@ -8,6 +8,10 @@ export default angular.module('app', [playground, help])
     .config(config)
     .name;
 
+/**
+ * @param {Object} $urlRouterProvider
+ * @return {undefined}
+ */
 function config($urlRouterProvider) {
     $urlRouterProvider.otherwise('/playground');
 }

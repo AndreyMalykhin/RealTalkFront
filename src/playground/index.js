@@ -13,6 +13,10 @@ export default angular.module('app.playground', [core, 'ui.codemirror'])
     .config(config)
     .name;
 
+/**
+ * @param {Object} $stateProvider
+ * @return {undefined}
+ */
 function config($stateProvider) {
     $stateProvider.state('playground', {
         url: '/playground',

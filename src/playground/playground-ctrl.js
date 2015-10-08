@@ -6,7 +6,7 @@ export default class PlaygroundCtrl {
         /**
          * @type {String}
          */
-        this.code = '"POW!POW!";';
+        this.code = require('./example.txt');
 
         /**
          * @type {Server}

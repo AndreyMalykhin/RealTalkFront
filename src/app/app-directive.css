@@ -10,3 +10,7 @@
 .rt-toolbar__title {
     font-family: 'Fontdiner Swanky';
 }
+
+.rt-content.ng-enter {
+    animation: flipInX 1s;
+}

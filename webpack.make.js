@@ -110,6 +110,9 @@ module.exports = function makeWebpackConfig (options) {
       test: /\.html$/,
       loader: 'html',
       query: {attrs: ['md-icon:md-svg-src']}
+    }, {
+      test: /\.txt$/,
+      loader: 'raw'
     }]
   };
 

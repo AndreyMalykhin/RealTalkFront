@@ -3,9 +3,9 @@ export default class Server {
      * @param {String} url
      * @param {Object} $q
      * @param {Object} $resource
-     * @param {Object} eventManager
+     * @param {Object} $http
      */
-    constructor(url, $q, $resource, eventManager) {
+    constructor(url, $q, $resource, $http) {
         /**
          * @type {String}
          */
@@ -24,12 +24,7 @@ export default class Server {
         /**
          * @type {Object}
          */
-        this._eventManager = eventManager;
-        
-        /**
-         * @type {Number}
-         */
-        this._pendingRequestsCount = 0;
+        this._$http = $http;
 
         /**
          * @type {Resource}
@@ -46,7 +41,6 @@ export default class Server {
      */
     executeCode(code) {
         let deferred = this._$q.defer();
-        ++this._pendingRequestsCount;
         this._vm.execute(null, {'code': code}).$promise
             .then((vm) => {
                 deferred.resolve(vm.output);
@@ -54,14 +48,7 @@ export default class Server {
                 let error = (typeof response.data === 'string')
                     ? {code: response.status, msg: response.statusText}
                     : response.data;
-                this._eventManager.publish({
-                    topic: Server.EVENT_REQUEST_ERROR,
-                    data: error
-                });
                 deferred.reject(error);
-            })
-            .finally(() => {
-                --this._pendingRequestsCount;
             });
         return deferred.promise;
     }
@@ -70,15 +57,8 @@ export default class Server {
      * @return {Boolean}
      */
     hasPendingRequests() {
-        return this._pendingRequestsCount != 0;
+        return this._$http.pendingRequests.length != 0;
     }
 };
 
-/**
- * @static
- * @const
- * @type {String}
- */
-Server.EVENT_REQUEST_ERROR = 'server.request_error';
-
-Server.$inject = ['serverUrl', '$q', '$resource', 'eventManager'];
+Server.$inject = ['serverUrl', '$q', '$resource', '$http'];

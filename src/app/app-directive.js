@@ -1,5 +1,8 @@
 import './app-directive.css';
 
+/**
+ * @return {Object}
+ */
 export default function appDirective() {
     return {
         restrict: 'E',
