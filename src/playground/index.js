@@ -1,5 +1,4 @@
 import angular from 'angular';
-import 'angular-ui-codemirror/src/ui-codemirror';
 import core from '../core';
 import playgroundDirective from './playground-directive';
 import playgroundCodeDirective from './playground-code-directive';

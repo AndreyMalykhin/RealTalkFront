@@ -1,106 +1,134 @@
-<div layout="column" layout-align="start center" layout-margin>
-    <h3 class="md-title">Language Constructs</h3>
-    <md-whiteframe class="md-whiteframe-1dp">
-        <md-data-table-container>
-            <table md-data-table>
-                <thead>
-                    <tr>
-                        <th name="Real Talk"></th>
-                        <th name="Java"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>homie</td>
-                        <td>import</td>
-                    </tr>
-                    <tr>
-                        <td>roll</td>
-                        <td>while</td>
-                    </tr>
-                    <tr>
-                        <td>keeprollin</td>
-                        <td>continue</td>
-                    </tr>
-                    <tr>
-                        <td>holdon</td>
-                        <td>break</td>
-                    </tr>
-                    <tr>
-                        <td>bringitback</td>
-                        <td>return</td>
-                    </tr>
-                    <tr>
-                        <td>if</td>
-                        <td>if</td>
-                    </tr>
-                    <tr>
-                        <td>elz</td>
-                        <td>else</td>
-                    </tr>
-                    <tr>
-                        <td>fresh</td>
-                        <td>new</td>
-                    </tr>
-                    <tr>
-                        <td>real</td>
-                        <td>native</td>
-                    </tr>
-                    <tr>
-                        <td>yeah</td>
-                        <td>true</td>
-                    </tr>
-                    <tr>
-                        <td>nah</td>
-                        <td>false</td>
-                    </tr>
-                </tbody>
-            </table>
-        </md-data-table-container>    
-    </md-whiteframe>
+<div layout="row" layout-align="center start" layout-wrap>
+    <div layout="column" layout-align="start center" layout-margin ng-repeat="table in helpCtrl.tables track by $index">
+        <h3 class="md-subhead">{{ table.title }}</h3>
+        <md-whiteframe class="md-whiteframe-1dp">
+            <md-data-table-container>
+                <table md-data-table>
+                    <thead>
+                        <tr>
+                            <th name="Real Talk"></th>
+                            <th name="Java"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in table.rows track by $index">
+                            <td>{{ row.myDick }}</td>
+                            <td>{{ row.yourDick }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-data-table-container>    
+        </md-whiteframe>
+    </div>
+    <!--
+    <div layout="column" layout-align="start center" layout-margin>
+        <h3 class="md-subhead">Language Constructs</h3>
+        <md-whiteframe class="md-whiteframe-1dp">
+            <md-data-table-container>
+                <table md-data-table>
+                    <thead>
+                        <tr>
+                            <th name="Real Talk"></th>
+                            <th name="Java"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>homie</td>
+                            <td>import</td>
+                        </tr>
+                        <tr>
+                            <td>roll</td>
+                            <td>while</td>
+                        </tr>
+                        <tr>
+                            <td>keeprollin</td>
+                            <td>continue</td>
+                        </tr>
+                        <tr>
+                            <td>holdon</td>
+                            <td>break</td>
+                        </tr>
+                        <tr>
+                            <td>bringitback</td>
+                            <td>return</td>
+                        </tr>
+                        <tr>
+                            <td>if</td>
+                            <td>if</td>
+                        </tr>
+                        <tr>
+                            <td>elz</td>
+                            <td>else</td>
+                        </tr>
+                        <tr>
+                            <td>fresh</td>
+                            <td>new</td>
+                        </tr>
+                        <tr>
+                            <td>real</td>
+                            <td>native</td>
+                        </tr>
+                        <tr>
+                            <td>yeah</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>nah</td>
+                            <td>false</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-data-table-container>    
+        </md-whiteframe>
+    </div>
+    <div layout="column" layout-align="start center" layout-margin>
+        <h3 class="md-subhead">Data Types</h3>
+        <md-whiteframe class="md-whiteframe-1dp">
+            <md-data-table-container>
+                <table md-data-table>
+                    <thead>
+                        <tr>
+                            <th name="Real Talk"></th>
+                            <th name="Java"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>void</td>
+                            <td>void</td>
+                        </tr>
+                        <tr>
+                            <td>bool</td>
+                            <td>bool</td>
+                        </tr>
+                        <tr>
+                            <td>char</td>
+                            <td>char</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>long</td>
+                            <td>long</td>
+                        </tr>
+                        <tr>
+                            <td>double</td>
+                            <td>double</td>
+                        </tr>
+                        <tr>
+                            <td>string</td>
+                            <td>String</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-data-table-container>    
+        </md-whiteframe>
+    </div>
+    -->
 </div>
-<div layout="column" layout-align="start center" layout-margin>
-    <h3 class="md-title">Data Types</h3>
-    <md-whiteframe class="md-whiteframe-1dp">
-        <md-data-table-container>
-            <table md-data-table>
-                <thead>
-                    <tr>
-                        <th name="Real Talk"></th>
-                        <th name="Java"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>void</td>
-                        <td>void</td>
-                    </tr>
-                    <tr>
-                        <td>bool</td>
-                        <td>bool</td>
-                    </tr>
-                    <tr>
-                        <td>char</td>
-                        <td>char</td>
-                    </tr>
-                    <tr>
-                        <td>int</td>
-                        <td>int</td>
-                    </tr>
-                    <tr>
-                        <td>long</td>
-                        <td>long</td>
-                    </tr>
-                    <tr>
-                        <td>double</td>
-                        <td>double</td>
-                    </tr>
-                    <tr>
-                        <td>string</td>
-                        <td>String</td>
-                    </tr>
-                </tbody>
-            </table>
-        </md-data-table-container>    
-    </md-whiteframe>
+<div layout="column" layout-align="center center">
+    <md-button class="md-raised md-primary" ng-click="helpCtrl.goBack()">I got it!</md-button>
 </div>

@@ -1,4 +1,6 @@
 import 'codemirror/lib/codemirror.css';
+import 'angular-ui-codemirror/src/ui-codemirror';
+import './real-talk-mode';
 
 /**
  * @return {Object}
