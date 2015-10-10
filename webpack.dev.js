@@ -27,7 +27,12 @@ var config = {
         }
     },
     module: {
-        preLoaders: [],
+        preLoaders: [
+            {
+                test: /\.js$/,
+                loader: 'ng-annotate'
+            }
+        ],
         loaders: [
             {
                 test: /\.js$/,
