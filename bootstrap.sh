@@ -9,18 +9,19 @@ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - \
 && sudo apt-get -y install build-essential nodejs nginx
 
 sudo rm -f /etc/nginx/sites-enabled/default \
-&& sudo tee /etc/nginx/sites-available/real_talk > /dev/null <<EOF
+&& sudo tee /etc/nginx/sites-available/real_talk_front > /dev/null <<EOF
 server {
   listen ${port};
   root ${projectDir}/public;
   index index.html;
   server_name ${host};
+  sendfile off;
   location / {
     try_files \$uri \$uri/ /index.html;
   }
 }
 EOF
-sudo ln -sf /etc/nginx/sites-available/real_talk /etc/nginx/sites-enabled/real_talk \
+sudo ln -sf /etc/nginx/sites-available/real_talk_front /etc/nginx/sites-enabled/real_talk_front \
 && sudo service nginx restart
 
 cd "${projectDir}" \
