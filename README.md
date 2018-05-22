@@ -1,5 +1,6 @@
-#What is it?
-Frontend for [Real Talk!](https://github.com/AndreyMalykhin/RealTalk) web app.
+### Screenshots
+<img src="https://preview.ibb.co/euABMT/andreymalykhin_github_io_Real_Talk_Front.png" />
 
-#Where is backend?
-[POW!](https://github.com/AndreyMalykhin/RealTalkBack).
+### Credits
+- [AngularJS](https://angularjs.org/)
+- [Webpack](https://webpack.github.io/)
